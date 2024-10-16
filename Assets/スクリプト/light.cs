@@ -22,6 +22,8 @@ public class LightControl : MonoBehaviour
             rend.material.color = new Color(rend.material.color.r, rend.material.color.g, rend.material.color.b, alpha);
         }
 
+        //これはテストです。
+
         // Check for input based on num value
         switch (num)
         {
