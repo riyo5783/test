@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ノーツ君 : MonoBehaviour
+public class Notes : MonoBehaviour
 {
-    int NoteSpeed = 5;
-    
-    // Update is called once per frame
+    //ノーツのスピードを設定
+    float NoteSpeed = 8;
+    bool start;
+
+    void Start()
+    {
+        NoteSpeed = GManager.instance.noteSpeed;
+    }
     void Update()
     {
-       transform.position -= transform.forward * Time.deltaTime * NoteSpeed;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            start = true;
+        }
+        if (start)
+        {
+            transform.position -= transform.forward * Time.deltaTime * NoteSpeed;
+        }
     }
 }
